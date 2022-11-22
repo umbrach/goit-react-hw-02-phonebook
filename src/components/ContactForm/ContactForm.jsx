@@ -33,22 +33,23 @@ class ContactForm extends Component {
     return (
       <form className={s.form} onSubmit={this.hendleSubmit}>
         <label>
-          Имя
+          Name
           <input
             className={s.input}
             type="text"
             name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             value={this.state.name}
             onChange={this.hendleChange}
             required
           ></input>
         </label>
         <label>
-          Телефон
+          Phone number
           <input
             className={s.input}
             type="tel"
-            pattern="^[ 0-9]+$"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             name="number"
             value={this.state.number}
             onChange={this.hendleChange}
