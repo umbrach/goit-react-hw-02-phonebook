@@ -22,10 +22,10 @@ class App extends Component {
       name,
       number,
     };
-    const alreadyContacts = this.state.contacts.find(
+    const alreadyInContacts = this.state.contacts.find(
       item => item.name === name
     );
-    if (alreadyContacts) {
+    if (alreadyInContacts) {
       alert(`${name} is already in contacts`);
       return;
     }
